@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "twilightforest",
+	"version": "1.0",
+
+	"name": "Twilight Forest",
+	"description": "A port of Twilight Forest 0.1p4 from ModLoader to StationAPI 2.0",
+	"authors": [
+		"GameHerobrine (port)",
+		"Benimatic (orginial)"
+	],
+	"contact": {
+		"sources": "https://github.com/GameHerobrine/TwilightForstStAPI"
+	},
+
+	"license": "WTFPL",
+	"icon": "assets/twilightforest/icon.png",
+
+	"environment": "*",
+	"entrypoints": {
+		"stationapi:event_bus": [
+			"net.skidcode.gh.twilightforest.DimensionRegistryTwilightForest",
+			"net.skidcode.gh.twilightforest.EntityRegistry",
+			"net.skidcode.gh.twilightforest.BonusChestGen"
+		],
+		"stationapi:event_bus_client": [
+			
+		],
+		"stationapi:event_bus_server": [
+		]
+	},
+	"mixins": [
+		"twilightforest.mixins.json"
+	],
+
+	"depends": {
+		"minecraft": "1.0.0-beta.7.3"
+	}
+}
