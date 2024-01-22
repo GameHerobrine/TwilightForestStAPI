@@ -21,6 +21,7 @@ import net.minecraft.class_623;
 import net.minecraft.class_624;
 import net.minecraft.class_82;
 import net.minecraft.world.World;
+import net.modificationstation.stationapi.impl.world.chunk.FlattenedChunk;
 import net.skidcode.gh.twilightforest.biome.TFBiomeGenBase;
 import net.skidcode.gh.twilightforest.dimension.feature.*;
 
@@ -68,7 +69,8 @@ implements class_51 {
     public class_43 method_1806(int cx, int cz) {
         this.rand.setSeed((long)cx * 341873128712L + (long)cz * 132897987541L);
         byte[] abyte0 = new byte[32768];
-        class_43 chunk = new class_43(this.worldObj, abyte0, cx, cz);
+        FlattenedChunk chunk = new FlattenedChunk(this.worldObj, cx, cz);
+        //class_43 chunk = new class_43(this.worldObj, abyte0, cx, cz);
         this.biomesForGeneration = this.worldObj.method_1781().method_1791(this.biomesForGeneration, cx * 16, cz * 16, 16, 16);
         double[] temperature = this.worldObj.method_1781().field_2235;
         double[] humidity = this.worldObj.method_1781().field_2236;
@@ -77,6 +79,7 @@ implements class_51 {
         this.addGlaciers(cx, cz, abyte0, this.biomesForGeneration, temperature);
         this.raiseHills(cx, cz, abyte0);
         this.replaceBlocksForBiome(cx, cz, abyte0, this.biomesForGeneration, temperature);
+        chunk.fromLegacy(abyte0);
         chunk.method_873();
         return chunk;
     }

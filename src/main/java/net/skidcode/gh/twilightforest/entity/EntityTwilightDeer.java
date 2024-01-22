@@ -7,7 +7,7 @@ public class EntityTwilightDeer
 extends CowEntity {
     public EntityTwilightDeer(World world) {
         super(world);
-        this.texture = "/twilightforest/wilddeer.png";
+        this.texture = "tforest:textures/entity/wilddeer.png";
         this.setBoundingBoxSpacing(0.7f, 2.3f);
     }
 

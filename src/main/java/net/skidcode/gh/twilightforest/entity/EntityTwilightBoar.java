@@ -7,7 +7,7 @@ public class EntityTwilightBoar
 extends PigEntity {
     public EntityTwilightBoar(World world) {
         super(world);
-        this.texture = "/twilightforest/wildboar.png";
+        this.texture = "tforest:textures/entity/wildboar.png";
         this.setBoundingBoxSpacing(0.9f, 0.9f);
     }
 }

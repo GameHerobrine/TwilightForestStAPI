@@ -26,10 +26,10 @@ public class ClientPlayerEntityMixin implements TeleportationManager{
 	private void handleTicking(CallbackInfo info) {
 		ClientPlayerEntity player = (ClientPlayerEntity) (Object) this;
 		//DimensionRegistry.INSTANCE.getByLegacyId(player.dimensionId);
-		DimensionRegistry.INSTANCE.getByLegacyId(player.dimensionId).ifPresent(dim -> {
-			insideTF = dim.equals(DimensionRegistryTwilightForest.TFOREST);
-		});
-		if((player.getHand() != null && player.getHand().itemId == Block.RED_MUSHROOM.id) || insideTF) {
+		//DimensionRegistry.INSTANCE.getByLegacyId(player.dimensionId).ifPresent(dim -> {
+		//	insideTF = dim.equals(DimensionRegistryTwilightForest.TFOREST);
+		//});
+		if((player.getHand() != null && player.getHand().itemId == Block.RED_MUSHROOM.id)) {
 			((HasTeleportationManager)player).setTeleportationManager(this);
 		}
 		System.out.println("im in portal!");
@@ -38,13 +38,6 @@ public class ClientPlayerEntityMixin implements TeleportationManager{
 	@Unique
 	@Override
 	public void switchDimension(PlayerEntity player) {
-		if(!insideTF) {
-			DimensionHelper.switchDimension(player, DimensionRegistryTwilightForest.ID, 1, new class_467());
-			System.out.println(DimensionRegistry.INSTANCE.getLegacyId(DimensionRegistryTwilightForest.ID));
-			insideTF = true;
-		}else {
-			//TODO
-		}
-		
+		DimensionHelper.switchDimension(player, DimensionRegistryTwilightForest.ID, 1, new class_467());
 	}
 }

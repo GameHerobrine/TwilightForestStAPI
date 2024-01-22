@@ -4,12 +4,14 @@ import net.minecraft.class_51;
 import net.minecraft.block.Block;
 import net.minecraft.world.dimension.Dimension;
 import net.modificationstation.stationapi.api.client.world.dimension.TravelMessageProvider;
+import net.modificationstation.stationapi.api.registry.DimensionRegistry;
+import net.skidcode.gh.twilightforest.DimensionRegistryTwilightForest;
 
 public class DimensionTwilightForest extends Dimension implements TravelMessageProvider{
 
 	public DimensionTwilightForest()
 	{
-		this.id = 7;
+		this.id = DimensionRegistry.INSTANCE.getLegacyId(DimensionRegistryTwilightForest.ID).getAsInt();
 	}
 	
 	@Override
@@ -30,7 +32,7 @@ public class DimensionTwilightForest extends Dimension implements TravelMessageP
     @Override
     public void method_1769() {
         this.field_2174 = new WorldChunkManagerTwilightForest(this.field_2173);
-        this.id = 7;
+        this.id = DimensionRegistry.INSTANCE.getLegacyId(DimensionRegistryTwilightForest.ID).getAsInt();
     }
 
     @Override

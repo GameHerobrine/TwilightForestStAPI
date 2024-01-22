@@ -7,7 +7,7 @@ public class EntityTwilightBighorn
 extends SheepEntity {
     public EntityTwilightBighorn(World world) {
         super(world);
-        this.texture = "/twilightforest/bighorn.png";
+        this.texture = "tforest:textures/entity/bighorn.png";
         this.setBoundingBoxSpacing(0.9f, 1.3f);
     }
 
