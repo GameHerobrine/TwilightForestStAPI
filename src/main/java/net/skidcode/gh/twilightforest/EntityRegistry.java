@@ -1,5 +1,7 @@
 package net.skidcode.gh.twilightforest;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.client.render.entity.CowEntityRenderer;
 import net.minecraft.client.render.entity.PigEntityRenderer;
@@ -18,12 +20,14 @@ import net.skidcode.gh.twilightforest.entity.render.ModelTwilightDeer;
 public class EntityRegistry {
 	@EventListener
 	public void registerEntities(EntityRegister event) {
+		System.out.println("register entities!");
 		event.register(EntityTwilightBoar.class, "Wild Boar");
         event.register(EntityTwilightBighorn.class, "Bighorn Sheep");
         event.register(EntityTwilightDeer.class, "Wild Deer");
 	}
 	
 	@EventListener
+	@Environment(EnvType.CLIENT)
 	public static void registerRenderer(EntityRendererRegisterEvent event)
     {
 		event.renderers.put(EntityTwilightBoar.class, new PigEntityRenderer(new ModelTwilightBoar(), new PigEntityModel(0.5f), 0.7f));

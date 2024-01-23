@@ -19,12 +19,11 @@
 	"environment": "*",
 	"entrypoints": {
 		"stationapi:event_bus": [
-			"net.skidcode.gh.twilightforest.DimensionRegistryTwilightForest",
 			"net.skidcode.gh.twilightforest.EntityRegistry",
-			"net.skidcode.gh.twilightforest.BonusChestGen"
+			"net.skidcode.gh.twilightforest.BonusChestGen",
+			"net.skidcode.gh.twilightforest.DimensionRegistryTwilightForest"
 		],
 		"stationapi:event_bus_client": [
-			
 		],
 		"stationapi:event_bus_server": [
 		]

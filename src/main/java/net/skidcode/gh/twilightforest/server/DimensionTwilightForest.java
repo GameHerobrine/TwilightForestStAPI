@@ -1,4 +1,4 @@
-package net.skidcode.gh.twilightforest.dimension;
+package net.skidcode.gh.twilightforest.server;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -8,22 +8,14 @@ import net.minecraft.world.dimension.Dimension;
 import net.modificationstation.stationapi.api.client.world.dimension.TravelMessageProvider;
 import net.modificationstation.stationapi.api.registry.DimensionRegistry;
 import net.skidcode.gh.twilightforest.DimensionRegistryTwilightForest;
-@Environment(EnvType.CLIENT)
-public class DimensionTwilightForest extends Dimension implements TravelMessageProvider{
+import net.skidcode.gh.twilightforest.dimension.ChunkProviderTwilightForest;
+import net.skidcode.gh.twilightforest.dimension.WorldChunkManagerTwilightForest;
+@Environment(EnvType.SERVER)
+public class DimensionTwilightForest extends Dimension{
 
 	public DimensionTwilightForest()
 	{
 		this.id = DimensionRegistry.INSTANCE.getLegacyId(DimensionRegistryTwilightForest.ID).getAsInt();
-	}
-	
-	@Override
-	public String getEnteringTranslationKey() {
-		return "Entering the Twilight Forest";
-	}
-
-	@Override
-	public String getLeavingTranslationKey() {
-		return "Leaving the Twilight Forest";
 	}
 	
 	@Override

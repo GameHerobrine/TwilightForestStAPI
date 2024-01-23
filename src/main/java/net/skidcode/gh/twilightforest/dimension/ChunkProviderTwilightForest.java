@@ -615,7 +615,7 @@ implements class_51 {
                 int k25 = this.worldObj.method_228(j19, j22);
                 double d1 = this.generatedTemperatures[i24 * 16 + j25] - (double)(k25 - 64) / 64.0 * 0.3;
                 if (!(d1 < 0.5) || k25 <= 0 || k25 >= 128 || !this.worldObj.method_234(j19, k25, j22) || !this.worldObj.method_1779(j19, k25 - 1, j22).method_907() || this.worldObj.method_1779(j19, k25 - 1, j22) == Material.field_997) continue;
-                this.worldObj.setBlock(j19, k25, j22, Block.SNOW.id);
+                this.worldObj.setBlock(j19, k25, j22, Block.SNOW.id); //TODO this setBlock crashes server
             }
         }
         int hsize = ChunkProviderTwilightForest.nearestHillSize(chunkX, chunkZ, 0L);
